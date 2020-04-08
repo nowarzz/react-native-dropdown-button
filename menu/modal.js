@@ -1,7 +1,7 @@
 module.exports = (React, { Component, View, TouchableOpacity, Modal }, { Styles }) => {
     class MenuModal extends Component {
         render() {
-            const { visible, onPress, children } = this.props
+            const { visible, onPress, children, modalTopOffset } = this.props
             const { width, height } = this.props.window
             return (
                 <Modal
@@ -13,11 +13,11 @@ module.exports = (React, { Component, View, TouchableOpacity, Modal }, { Styles 
                     }}
                     visible={visible}
                 >
-                    <TouchableOpacity 
+                    <TouchableOpacity
                         style={{
                             width,
-                            height,
-                        }} 
+                            height: height - modalTopOffset,
+                        }}
                         onPress={onPress}
                     >
                         {children}
