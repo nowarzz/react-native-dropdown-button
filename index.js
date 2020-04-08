@@ -90,7 +90,7 @@ export default class MenuButton extends Component {
     return (
       <View style={buttonStyle} onLayout={this.onLayout}>
         <MenuSwitch content={buttonContent} onPress={this.toggleMenu} />
-        <MenuModal onPress={this.closeMenu} window={window} visible={openMenu == menuName} modalTopOffset>
+        <MenuModal onPress={this.closeMenu} window={window} visible={openMenu == menuName} modalTopOffset={modalTopOffset}>
           <MenuOptions style={optionsStyles}>
             {
               menuGroup.map((menu) => {
